@@ -71,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 "# cholera-map" 
 "# cholera-map-front" 
 "# cholera-map-front" 
+"# cholera-map-front" 
