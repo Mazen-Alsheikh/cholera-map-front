@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { Link } from "react-router";
 
 export default function CholeraForm() {
 
@@ -26,7 +25,7 @@ export default function CholeraForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/api/states", {
+        fetch("http://localhost:5000/api/states/update", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -162,29 +161,29 @@ export default function CholeraForm() {
                     <tbody>
                             {states.map((i) => {
                                 return ( 
-                                    <>
-                                    <tr>
-                                        <td>{i.state}</td>
-                                        <td>{i.cases}</td>
-                                        <td>{i.deaths}</td>
-                                        <td>{i.recovered}</td>
-                                        <td>{i['total_cases']}</td>
-                                        <td>{i['total_recovered']}</td>
-                                        <td>{i['total_death']}</td>
-                                        <td>
-                                            <Button onClick={() => {
-                                                setState(i.state);
-                                                setTotalCases(i['total_cases']);
-                                                setTotalDeaths(i['total_recovered']);
-                                                setTotalRecovered(i['total_death']);
-                                                setIsEditing(!isEditing);
-                                            }}
-                                            variant="info">
-                                                <i className="fa fa-edit"></i>تعديل 
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                </>
+                                    
+                                <tr key={i.id}>
+                                    <td>{i.state}</td>
+                                    <td>{i.cases}</td>
+                                    <td>{i.deaths}</td>
+                                    <td>{i.recovered}</td>
+                                    <td>{i['total_cases']}</td>
+                                    <td>{i['total_recovered']}</td>
+                                    <td>{i['total_deaths']}</td>
+                                    <td>
+                                        <Button onClick={() => {
+                                            setState(i.state);
+                                            setTotalCases(i['total_cases']);
+                                            setTotalDeaths(i['total_recovered']);
+                                            setTotalRecovered(i['total_deaths']);
+                                            setIsEditing(!isEditing);
+                                        }}
+                                        variant="info">
+                                            <i className="fa fa-edit"></i>تعديل 
+                                        </Button>
+                                    </td>
+                                </tr>
+                                
                                 );
                             })}
                     </tbody>
