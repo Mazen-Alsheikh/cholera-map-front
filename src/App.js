@@ -3,6 +3,10 @@ import LoginPage from "./components/LoginPage";
 import MyNav from "./components/MyNav";
 import Home from "./components/Home";
 import Users from "./components/Users";
+<<<<<<< HEAD
+=======
+import Control from "./components/Control";
+>>>>>>> 61c2562710d4e23ba1792f7f606622ec08810156
 import "./index.css";
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -25,7 +29,11 @@ export default function App() {
               <Route path='/logout' element={<Logout/>}/>
               <Route path='/control' element={
                 <ProtectedRoute>
+<<<<<<< HEAD
                   <CholeraForm/>
+=======
+                  <Control/>
+>>>>>>> 61c2562710d4e23ba1792f7f606622ec08810156
                 </ProtectedRoute>}/>
               <Route path='/users' element={
                 <ProtectedRoute>
