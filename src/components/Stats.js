@@ -24,11 +24,7 @@ function Stats({ selectedState }) {
             <Bounce>
                 <Row>
                     <Col className="mt-2">
-<<<<<<< HEAD
                         <h1>{selectedState['total_deaths']}</h1>
-=======
-                        <h1>{selectedState['total_death']}</h1>
->>>>>>> 61c2562710d4e23ba1792f7f606622ec08810156
                         <h6>الوفيات</h6>
                     </Col>
                 </Row>
@@ -37,11 +33,7 @@ function Stats({ selectedState }) {
                 <PieChart 
                     cases={selectedState['total_cases']}
                     recovered={selectedState['total_recovered']}
-<<<<<<< HEAD
                     deaths={selectedState['total_deaths']}
-=======
-                    deaths={selectedState['total_death']}
->>>>>>> 61c2562710d4e23ba1792f7f606622ec08810156
                 />
             </Row>
         </div>
