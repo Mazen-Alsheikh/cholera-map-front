@@ -30,7 +30,7 @@ function Users() {
             setLoading(false)
         })
 
-    }, [me?role, navigate]);
+    }, [me.role, navigate]);
 
     const handleAddToggle = function () {
         if (isAdding) {
