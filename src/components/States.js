@@ -24,7 +24,7 @@ function States({ onStateSelect }) {
         setGeoData(sudanGeoJSON);
 
         // تحميل بيانات الإحصائيات من السيرفر
-        fetch("cholera-map-back.railway.internal/api/stats")
+        fetch("cholera-map-back.up.railway.app/api/stats")
             .then(res => res.json())
             .then(data => {
                 const normalizedStats = {};
