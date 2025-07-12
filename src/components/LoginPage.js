@@ -15,7 +15,7 @@ function LoginPage() {
 
         e.preventDefault();
 
-        fetch("cholera-map-back.up.railway.app/api/login", {
+        fetch("https://cholera-map-back.up.railway.app/api/login", {
             method: "POST",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({email, password})
