@@ -16,7 +16,7 @@ function Users() {
 
     useEffect(()=> {
         if (me?.role !== "مدير") {
-        return <Navigate to="/" replace />;
+        return (navigate("/", {replace: true}));
         }
 
         fetch("http://localhost:5000/api/users", {method:"GET"})
