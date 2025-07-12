@@ -31,7 +31,7 @@ function User() {
             setLoading(false)
         })
 
-    }, []);
+    }, [id]);
 
     const handleDelete = () => {
         if (window.confirm("هل أنت متأكد أنك تريد حذف هذا المستخدم؟")) {

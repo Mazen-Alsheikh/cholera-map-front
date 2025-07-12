@@ -1,12 +1,14 @@
 import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../utls/UserContext";
 import { Navigate } from "react-router-dom";
 
 function Users() {
     const { me } = useUser();
+
+    const navigate = useNavigate();
 
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -28,7 +30,7 @@ function Users() {
             setLoading(false)
         })
 
-    }, []);
+    }, [me?role, navigate]);
 
     const handleAddToggle = function () {
         if (isAdding) {
