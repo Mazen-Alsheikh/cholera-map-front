@@ -14,7 +14,7 @@ export default function CholeraForm() {
     const [isEditing, setIsEditing] = useState(false);
     
     useEffect(() => {
-        fetch("http://localhost:5000/api/stats")
+        fetch("cholera-map-back.railway.internal/api/stats")
         .then(res => res.json())
         .then(result => {
             setStates(result.data);
@@ -25,7 +25,7 @@ export default function CholeraForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/api/states/update", {
+        fetch("cholera-map-back.railway.internal/api/states/update", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -44,7 +44,7 @@ export default function CholeraForm() {
         .then(result => {
             if (result.message === "تم تحديث البيانات بنجاح") {
                 alert(result.message);
-                fetch("http://localhost:5000/api/stats", {
+                fetch("cholera-map-back.railway.internal/api/stats", {
                     method: "GET"
                 })
                 .then(res => res.json())

@@ -20,7 +20,7 @@ function User() {
 
     useEffect(()=> {
 
-        fetch(`http://localhost:5000/api/user/${id}`, {method:"GET"})
+        fetch(`cholera-map-back.railway.internal/api/user/${id}`, {method:"GET"})
         .then((res) => res.json())
         .then((data) => {
             setUser(data.user)
@@ -35,7 +35,7 @@ function User() {
 
     const handleDelete = () => {
         if (window.confirm("هل أنت متأكد أنك تريد حذف هذا المستخدم؟")) {
-            fetch(`http://localhost:5000/api/deleteUser/${id}`, { method: "POST" })
+            fetch(`cholera-map-back.railway.internal/api/deleteUser/${id}`, { method: "POST" })
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -68,7 +68,7 @@ function User() {
             alert("كلمة المرور يجب أن تكون 6 أحرف على الأقل");
         }
 
-        fetch(`http://localhost:5000/api/updateuser/${id}`, {
+        fetch(`cholera-map-back.railway.internal/api/updateuser/${id}`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username, password})

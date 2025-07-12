@@ -19,7 +19,7 @@ function Users() {
         return (navigate("/", {replace: true}));
         }
 
-        fetch("http://localhost:5000/api/users", {method:"GET"})
+        fetch("cholera-map-back.railway.internal/api/users", {method:"GET"})
         .then((res) => res.json())
         .then((data) => {
             setUsers(data.users)
